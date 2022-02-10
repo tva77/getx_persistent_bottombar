@@ -20,7 +20,7 @@ class Tab1View extends GetView<Tab1Controller> {
               style: TextStyle(fontSize: 20),
             ),
             ElevatedButton(
-              onPressed: () => Get.toNamed(Routes.INTERNAL1),
+              onPressed: () => Get.toNamed(Routes.INTERNAL1, id: 0),
               child: Text("internal 1"),
             ),
             ElevatedButton(
