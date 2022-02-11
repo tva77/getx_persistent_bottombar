@@ -20,24 +20,32 @@ class HomeView extends GetView<HomeController> {
             children: [
               Navigator(
                 key: Get.nestedKey(0),
-                // observers: [GetObserver((_) {}, Get.routing)],
                 // initialRoute: Routes.TAB1,
                 onGenerateRoute: (RouteSettings settings) {
-                  WidgetBuilder builder;
-                  print(settings);
+                  var route;
+                  var page;
+                  print('settings = $settings');
                   switch (settings.name) {
                     case Routes.INTERNAL1:
-                      builder = (_) => Internal1View();
+                      route = Routes.INTERNAL1;
+                      page = Internal1View(
+                        args: settings.arguments,
+                      );
                       break;
                     case Routes.INTERNAL2:
-                      builder = (_) => Internal2View();
+                      route = Routes.INTERNAL2;
+                      page = Internal2View(
+                        args: settings.arguments,
+                      );
                       break;
                     default:
-                      builder = (_) => Tab1View();
-                    // throw Exception('Invalid route: ${settings.name}');
+                      route = Routes.TAB1;
+                      page = Tab1View();
                   }
-                  return MaterialPageRoute<void>(
-                    builder: builder,
+
+                  return GetPageRoute(
+                    routeName: route,
+                    page: () => page,
                     settings: settings,
                   );
                 },

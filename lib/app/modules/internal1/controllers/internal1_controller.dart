@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 
 class Internal1Controller extends GetxController {
-  //TODO: Implement Internal1Controller
-
-  final count = 0.obs;
+  var args;
   @override
   void onInit() {
+    args = Get.arguments;
+    print(args);
     super.onInit();
   }
 
@@ -16,5 +16,4 @@ class Internal1Controller extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
 }

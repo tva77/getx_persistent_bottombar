@@ -20,11 +20,19 @@ class Tab1View extends GetView<Tab1Controller> {
               style: TextStyle(fontSize: 20),
             ),
             ElevatedButton(
-              onPressed: () => Get.toNamed(Routes.INTERNAL1, id: 0),
+              onPressed: () => Get.toNamed(
+                Routes.INTERNAL1,
+                id: 0,
+                arguments: {"teste": "123"},
+              ),
               child: Text("internal 1"),
             ),
             ElevatedButton(
-              onPressed: () => Get.toNamed(Routes.INTERNAL2, id: 0),
+              onPressed: () => Get.toNamed(
+                Routes.INTERNAL2,
+                id: 0,
+                arguments: {"test2": "456"},
+              ),
               child: Text("internal 2"),
             ),
           ],
