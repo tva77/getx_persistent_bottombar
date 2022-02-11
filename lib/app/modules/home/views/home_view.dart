@@ -25,6 +25,7 @@ class HomeView extends GetView<HomeController> {
                   var route;
                   var page;
                   print('settings = $settings');
+
                   switch (settings.name) {
                     case Routes.INTERNAL1:
                       route = Routes.INTERNAL1;
